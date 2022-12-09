@@ -1,10 +1,13 @@
 # seam-carving
 
+
 <img src="https://github.com/andrewdcampbell/seam-carving/blob/master/demos/visuals/lake_shrink.gif" width="900">
+
 
 A fast Python implementation of [Seam Carving for Content-Aware Image Resizing ](https://inst.eecs.berkeley.edu/~cs194-26/fa18/hw/proj4-seamcarving/imret.pdf) (2007), including the improved energy algorithm described in [Improved Seam Carving for Video Retargeting](http://www.eng.tau.ac.il/~avidan/papers/vidret.pdf) (2008).
 
 ## Requirements
+
 * OpenCV
 * scipy
 * numba
@@ -19,12 +22,14 @@ python seam_carving.py (-resize | -remove) -im <IM_PATH> -out <OUTPUT_IM_NAME>
 
 The program is run via the command-line. There are two modes of operations: `resize` or `remove`. The former is for resizing an image vertically or horizontally and the latter is for removing an object as specified by a mask.
 
+
 For both modes:
 * `-im`: The path to the image to be processed.
 * `-out`: The name for the output image.
 * `-mask`: (Optional) The path to the protective mask. The mask should be binary and have the same size as the input image. White areas represent regions where no seams should be carved (e.g. faces).
 * `-vis`: If present, display a window while the algorithm runs showing the seams as they are removed.
 * `-backward_energy`: If present, use the backward energy function (i.e. gradient magnitude) instead of the forward energy function (default).
+
 
 For resizing:
 * `-dy`: Number of horizontal seams to add (if positive) or subtract (if negative). Default is 0.
@@ -42,6 +47,8 @@ There are some additional constants defined at the top of the code `seam_carving
 
 
 ## Example Results
+
+
 
 The input image is on the left and the result of the algorithm is on the right.
 
@@ -82,7 +89,6 @@ Animated gif:
 <img src="https://github.com/andrewdcampbell/seam-carving/blob/master/demos/bench_backward_energy.jpg" width="400"> <img src="https://github.com/andrewdcampbell/seam-carving/blob/master/demos/bench_forward_energy.jpg" width="400">
 
 ---
-For more information on how the algorithm works, see my [blog post](https://andrewdcampbell.github.io/seam-carving). 
 
 ## Acknowledgements
 Many parts of the code are adapted/optimized versions of functionality from other implementations:
